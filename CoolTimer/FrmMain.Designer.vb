@@ -23,11 +23,13 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.MspTimer = New System.Windows.Forms.MenuStrip()
         Me.MnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuFileStyle = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuFileStyleTimer = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuFileStyleStopwatch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MnuFileStyleCountdown = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuFileOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.MnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.PnlDisplay = New System.Windows.Forms.Panel()
@@ -36,7 +38,6 @@ Partial Class FrmMain
         Me.BtnStart = New System.Windows.Forms.Button()
         Me.BtnStop = New System.Windows.Forms.Button()
         Me.BtnReset = New System.Windows.Forms.Button()
-        Me.MnuFileStyleCountdown = New System.Windows.Forms.ToolStripMenuItem()
         Me.MspTimer.SuspendLayout()
         Me.PnlDisplay.SuspendLayout()
         Me.SuspendLayout()
@@ -61,7 +62,7 @@ Partial Class FrmMain
         '
         Me.MnuFileStyle.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuFileStyleTimer, Me.MnuFileStyleStopwatch, Me.MnuFileStyleCountdown})
         Me.MnuFileStyle.Name = "MnuFileStyle"
-        Me.MnuFileStyle.Size = New System.Drawing.Size(180, 22)
+        Me.MnuFileStyle.Size = New System.Drawing.Size(116, 22)
         Me.MnuFileStyle.Text = "&Style"
         '
         'MnuFileStyleTimer
@@ -69,25 +70,31 @@ Partial Class FrmMain
         Me.MnuFileStyleTimer.Checked = True
         Me.MnuFileStyleTimer.CheckState = System.Windows.Forms.CheckState.Checked
         Me.MnuFileStyleTimer.Name = "MnuFileStyleTimer"
-        Me.MnuFileStyleTimer.Size = New System.Drawing.Size(180, 22)
+        Me.MnuFileStyleTimer.Size = New System.Drawing.Size(137, 22)
         Me.MnuFileStyleTimer.Text = "&Timer"
         '
         'MnuFileStyleStopwatch
         '
         Me.MnuFileStyleStopwatch.Name = "MnuFileStyleStopwatch"
-        Me.MnuFileStyleStopwatch.Size = New System.Drawing.Size(180, 22)
+        Me.MnuFileStyleStopwatch.Size = New System.Drawing.Size(137, 22)
         Me.MnuFileStyleStopwatch.Text = "&Stopwatch"
+        '
+        'MnuFileStyleCountdown
+        '
+        Me.MnuFileStyleCountdown.Name = "MnuFileStyleCountdown"
+        Me.MnuFileStyleCountdown.Size = New System.Drawing.Size(137, 22)
+        Me.MnuFileStyleCountdown.Text = "&Countdown"
         '
         'MnuFileOptions
         '
         Me.MnuFileOptions.Name = "MnuFileOptions"
-        Me.MnuFileOptions.Size = New System.Drawing.Size(180, 22)
+        Me.MnuFileOptions.Size = New System.Drawing.Size(116, 22)
         Me.MnuFileOptions.Text = "&Options"
         '
         'MnuFileExit
         '
         Me.MnuFileExit.Name = "MnuFileExit"
-        Me.MnuFileExit.Size = New System.Drawing.Size(180, 22)
+        Me.MnuFileExit.Size = New System.Drawing.Size(116, 22)
         Me.MnuFileExit.Text = "E&xit"
         '
         'PnlDisplay
@@ -156,13 +163,7 @@ Partial Class FrmMain
         Me.BtnReset.Text = "Reset"
         Me.BtnReset.UseVisualStyleBackColor = True
         '
-        'MnuFileStyleCountdown
-        '
-        Me.MnuFileStyleCountdown.Name = "MnuFileStyleCountdown"
-        Me.MnuFileStyleCountdown.Size = New System.Drawing.Size(180, 22)
-        Me.MnuFileStyleCountdown.Text = "&Countdown"
-        '
-        'Form1
+        'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -173,10 +174,11 @@ Partial Class FrmMain
         Me.Controls.Add(Me.PnlDisplay)
         Me.Controls.Add(Me.MspTimer)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MspTimer
         Me.Margin = New System.Windows.Forms.Padding(6)
         Me.MinimumSize = New System.Drawing.Size(384, 640)
-        Me.Name = "Form1"
+        Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cool Timer"
         Me.MspTimer.ResumeLayout(False)
